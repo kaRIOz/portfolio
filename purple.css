@@ -1,0 +1,23 @@
+:root {
+
+
+    --mainColor: #46344e;
+    --secondColor: #382a3f;
+
+    --mainStuff: #fff;
+
+    --match-color: hsl(41, 100%, 64%);
+    --path--color: hsl(41, 100%, 64%);
+    --link-btn-color: hsla(41, 100%, 64%, 0.548);
+    --link-btn-color-hover: hsla(41, 100%, 64%, 0.815);
+    --icon-color: hsl(41, 100%, 64%);
+    --project-link-color: rgb(52, 147, 255);
+    --portfolio-title: #000;
+
+
+    --top-link: #000;
+
+    --borderColor: #fff;
+    --secondaryText: #fff;
+
+}
