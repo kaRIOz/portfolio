@@ -1,31 +1,40 @@
 // sticky navbar when scroll
 
-const top_link = document.querySelector(".top-link");
-const nav = document.querySelector(".nav");
+const navbar = document.getElementById("nav");
+const topLink = document.querySelector(".top-link");
 
-window.addEventListener("scroll", fixNav);
-function fixNav() {
-  const height_page = window.pageYOffset;
-  if (window.scrollY > nav.offsetHeight + 100) {
-    nav.classList.add("active");
+window.addEventListener("scroll", function () {
+  const scrollHeight = window.pageYOffset;
+  const navHeight = navbar.getBoundingClientRect().height;
+
+  if (scrollHeight > navHeight) {
+    navbar.classList.add("fixed-nav");
   } else {
-    nav.classList.remove("active");
+    navbar.classList.remove("fixed-nav");
   }
 
-  if (height_page > 578) {
-    top_link.classList.add("show-top-link");
+  if (scrollHeight > 598) {
+    topLink.classList.add("show-top-link");
   } else {
-    top_link.classList.remove("show-top-link");
+    topLink.classList.remove("show-top-link");
   }
-}
+});
 
 // toggle btn
 
-const toggle_btn = document.querySelector(".btn");
+const navToggle = document.querySelector(".nav-toggle");
+const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".links");
+navToggle.addEventListener("click", () => {
+  // linksContainer.classList.toggle('show-links')
 
-toggle_btn.addEventListener("click", () => {
-  links.classList.toggle("show-links");
+  const containerHeight = linksContainer.getBoundingClientRect().height;
+  const linksHeight = links.getBoundingClientRect().height;
+  if (containerHeight == 0) {
+    linksContainer.style.height = `${linksHeight}px`;
+  } else {
+    linksContainer.style.height = 0;
+  }
 });
 
 // change theme color
@@ -75,12 +84,34 @@ const date = document.getElementById("date");
 date.innerHTML = new Date().getFullYear();
 
 // scroll LINKS
+const scrollLinks = document.querySelectorAll(".scroll-link");
 
-const scrollLinks = document.querySelectorAll(".scroll");
-const links_container = document.querySelector(".links-container");
-
-scrollLinks.forEach((scroll) => {
-  scroll.addEventListener("click", (e) => {
+scrollLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
+
+    const id = e.currentTarget.getAttribute("href").slice(1);
+
+    let element = document.getElementById(id);
+    // calculate the height
+    const navHeight = navbar.getBoundingClientRect().height;
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+    const fixedNav = navbar.classList.contains("fixed-nav");
+
+    let position = element.offsetTop - navHeight;
+    // console.log(position);
+    if (!fixedNav) {
+      position = position - navHeight;
+    }
+
+    if (navHeight > 85) {
+      position = position + containerHeight;
+    }
+
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+    linksContainer.style.height = 0;
   });
 });

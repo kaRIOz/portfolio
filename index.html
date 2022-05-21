@@ -18,23 +18,37 @@
     
     <main>
         <header id="home" class="s1">
-            <nav class="nav">
+        <nav id="nav">
+            <div class="nav-center">
+                <!-- nav header -->
+                <div class="nav-header">
+        
+                    <h2>surface</h2>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+        
+                </div>
+                <!-- links -->
                 <div class="links-container">
-                    <div class="title">
-                        <h2>surface</h2>
-                        <button class="btn">
-                            <i class="fas fa-bars bars"></i>
-                        </button>
-                    </div>
-                    
                     <ul class="links">
-                        <li ><a href="#home" class="scroll">Home</a></li>
-                        <li><a href="#about" class="scroll">About</a></li>
-                        <li><a href="#portfolio" class="scroll">Portfolio</a></li>
-                        <li><a href="#contact" class="scroll">Contact</a></li>
+                        <li>
+                            <a href="#home" class="scroll-link">home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="scroll-link">about</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="scroll-link">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="scroll-link">Contact</a>
+                        </li>
+        
                     </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
             <div class="main-container">
                 <h1>Hello, I'm a Front-End Developer</h1>
@@ -55,7 +69,7 @@
                                 <li><i class="fab fa-facebook-f"></i></li>
                                 <li><i class="fab fa-twitter"></i></li>
                                 <li><i class="fab fa-instagram"></i></li>
-                                <li><i class="fab fa-github"></i></li>
+                                <li><a href="https://github.com/kaRIOz" target="_blank"><i class="fab fa-github"></i></a></li>
                             </ul>
                         </div>
 
@@ -207,6 +221,23 @@
         <section id="contact" class="contact s2">
             <div class="main-container">
                 <h2 style="padding: 1rem 0 2rem; text-align: center;">contact with me</h2>
+                <form id="contact-form">
+                    <a name="contact"></a>
+                
+                    <label>Name</label>
+                    <input class="input-field" type="text" name="name">
+                
+                    <label>Subject</label>
+                    <input class="input-field" type="text" name="subject">
+                
+                    <label>Email</label>
+                    <input class="input-field" type="text" name="email">
+                
+                    <label>Message</label>
+                    <textarea class="input-field" name="message"></textarea>
+                
+                    <input id="submit-btn" type="submit" value="Send">
+                </form>
             </div>
         </section>
 
@@ -216,7 +247,7 @@
             </div>
         </footer>
     </main>
-        <a class="top-link scroll" href="#home">
+        <a class="top-link scroll-link" href="#home">
             <i class="fas fa-arrow-up"></i>
         </a>
     <script src="script.js"></script>
