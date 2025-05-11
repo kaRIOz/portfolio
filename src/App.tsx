@@ -1,7 +1,13 @@
-import React from "react";
+import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
 
 function App() {
-  return <main></main>;
+  return (
+    <>
+      <Hero />
+      <Marquee />
+    </>
+  );
 }
 
 export default App;
