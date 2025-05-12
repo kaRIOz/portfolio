@@ -1,3 +1,4 @@
+import AboutMe from "./components/AboutMe";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Hero />
       <Marquee />
+      <AboutMe />
     </>
   );
 }

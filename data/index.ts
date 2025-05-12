@@ -167,3 +167,20 @@ export const skills = [
   //   icon: SiVim,
   // },
 ];
+
+export const expCards = [
+  {
+    review:
+      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    imgPath: "/images/exp1.png",
+    logoPath:
+      "https://images.pexels.com/photos/3689532/pexels-photo-3689532.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Frontend Developer",
+    date: "January 2023 - Present",
+    responsibilities: [
+      "Developed and maintained user-facing features for the Hostinger website.",
+      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
+      "Optimized web applications for maximum speed and scalability.",
+    ],
+  },
+];

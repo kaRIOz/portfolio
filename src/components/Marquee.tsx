@@ -36,19 +36,16 @@ const Marquee = () => {
       <div className="marquee h-52 w-[100dvw] overflow-hidden relative">
         <div className="gradient-edge" />
         <div className="gradient-edge" />
-        <div className="space-y-10 text-amber-500">
+        <div className="space-y-5 md:space-y-10 text-amber-500">
           <div ref={sliderRef} className="keen-slider">
             {skills
               .slice(0, oneThirdLength)
               .map(({ id, skill, icon: Icon }) => (
-                <div
-                  className="keen-slider__slide flex justify-center"
-                  key={id}
-                >
-                  <h1 className=" border border-amber-500 px-4 py-2 rounded-lg flex gap-3">
-                    {skill}
-                    {Icon && <Icon className="text-xl" />}
-                  </h1>
+                <div className="keen-slider__slide" key={id}>
+                  <div className="border border-amber-500 px-2 py-2 rounded-lg flex items-center justify-center gap-3 max-w-fit">
+                    <h3 className="text-[11px] lg:text-[16px] ">{skill}</h3>
+                    {Icon && <Icon className="text-xl hidden md:block" />}
+                  </div>
                 </div>
               ))}
           </div>
@@ -56,14 +53,11 @@ const Marquee = () => {
             {skills
               .slice(oneThirdLength * 2)
               .map(({ id, skill, icon: Icon }) => (
-                <div
-                  className="keen-slider__slide flex items-center justify-end"
-                  key={id}
-                >
-                  <h1 className=" border border-amber-500 px-4 py-2 rounded-lg flex gap-3">
-                    {skill}
-                    {Icon && <Icon className="text-xl" />}
-                  </h1>
+                <div className="keen-slider__slide" key={id}>
+                  <div className="border border-amber-500 px-2 py-2 rounded-lg flex items-center justify-center gap-3 max-w-fit">
+                    <h3 className="text-[11px] lg:text-[16px]">{skill}</h3>
+                    {Icon && <Icon className="text-xl hidden md:block" />}
+                  </div>
                 </div>
               ))}
           </div>
@@ -71,14 +65,11 @@ const Marquee = () => {
             {skills
               .slice(oneThirdLength, oneThirdLength * 2)
               .map(({ id, skill, icon: Icon }) => (
-                <div
-                  className="keen-slider__slide flex items-center justify-end"
-                  key={id}
-                >
-                  <h1 className=" border border-amber-500 px-4 py-2 rounded-lg flex gap-3">
-                    {skill}
-                    {Icon && <Icon className="text-xl" />}
-                  </h1>
+                <div className="keen-slider__slide" key={id}>
+                  <div className="border border-amber-500 px-2 py-2 rounded-lg flex items-center justify-center gap-3 max-w-fit">
+                    <h3 className="text-[11px] lg:text-[16px]">{skill}</h3>
+                    {Icon && <Icon className="text-xl hidden md:block" />}
+                  </div>
                 </div>
               ))}
           </div>
