@@ -69,7 +69,7 @@ const Navbar = () => {
         "<"
       );
   }, []);
-
+// run
   useEffect(() => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
